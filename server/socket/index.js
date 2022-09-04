@@ -17,6 +17,10 @@ module.exports = (io) => {
     console.log(
       `a socket connection to the server has been made: ${socket.id}`
     );
+    // adding this right after connection is made. Adds us to the  room.
+    socket.on('joinRoom', (roomKey) => {
+      socket.join(roomKey);
+    });
     // listening for the event when the key: isKeyValid is emitted from waitingRoom.
     socket.on('isKeyValid', function (input) {
       const keyArray = Object.keys(gameRooms)
