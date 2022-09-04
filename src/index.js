@@ -11,7 +11,7 @@ class Game extends Phaser.Game {
     super(config);
     // add all scenes here
     this.scene.add('MainScene', MainScene);
-    // this.scene.add('WaitingRoom', WaitingRoom);
+    this.scene.add('WaitingRoom', WaitingRoom);
     // << start game with main scene here >>//
     this.scene.start('Mainscene');
   }
